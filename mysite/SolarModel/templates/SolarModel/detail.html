@@ -1,0 +1,19 @@
+{% extends 'SolarModel/base.html' %}
+
+{% block body%}
+    <div class="container">
+        <div class="row">
+            <div class="div.col-md-6">
+                <img src="{{ item.background_image }}" height="400px"/>
+            </div>
+            <div class="col-sm-4">
+                <h3 style="color: white">{{ item.item_name}}</h3>
+                <h5 style="color: white">{{ item.item_size}}</h5>
+                <h5 style="color: white">{{ item.item_mass}}</h5>
+                <h5 style="color: white">{{ item.item_age}}</h5>
+                <h6 style="color: white">{{ item.item_characteristics}}</h6>
+                <h6 style="color: white">{{ item.item_distance}}</h6>
+            </div>
+        </div>
+    </div>
+{% endblock %}

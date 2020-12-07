@@ -1,0 +1,97 @@
+{% extends 'SolarModel/base.html' %}
+{%load static%}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <title>Document</title>
+</head>
+<body>
+<div id="planet-orbit-container">
+{% block body %}
+{% for item in item_list %}
+
+    <div class="">
+        <a href="{% url 'SolarModel:detail' item.id%}">
+            <img width="60px" height="60px" src={{item.background_image}}>
+        </a>
+        <h2 style="color: white">{{item.item_name}}</h2>
+    </div>
+
+    {% if item.item_name == 'Sun' %}
+        <div class="Sun">
+            <a href="{% url 'SolarModel:detail' item.id%}">
+                <img class="" width="100px" height="100px" src={{item.background_image}}>
+            </a>
+        </div>
+    {% endif %}
+
+
+    {% if item.item_name == 'Mercury' %}
+        <div id="orbit-mercury">
+            <img class="Mercury" height="25px" width="25px" src="{{item.background_image}}">
+        </div>
+    {% endif %}
+
+    {% if item.item_name == 'Venus' %}
+        <div id="orbit-venus">
+            <img class="Venus" height="25px" width="25px" src="{{item.background_image}}">
+        </div>
+    {% endif %}
+
+    {% if item.item_name == 'Earth' %}
+        <div id="orbit-earth">
+            <img class="Earth" height="25px" width="25px" src="{{item.background_image}}">
+        </div>
+    {% endif %}
+
+    {% if item.item_name == 'Mars' %}
+    <div id = orbit-mars>
+            <img class="Mars" height="25px" width="25px" src="{{item.background_image}}">
+    </div>
+    {% endif %}
+
+    {% if item.item_name == 'Jupiter' %}
+        <div id="orbit-jupiter">
+            <img class="Jupiter" height="25px" width="25px" src="{{item.background_image}}">
+        </div>
+    {% endif %}
+
+    {% if item.item_name == 'Saturn' %}
+        <div id="orbit-saturn">
+            <img class="Saturn" height="25px" width="25px" src="{{item.background_image}}">
+        </div>
+    {% endif %}
+
+    {% if item.item_name == 'Uranus' %}
+        <div id="orbit-uranus">
+            <img class="Uranus" height="25px" width="25px" src="{{item.background_image}}">
+        </div>
+    {% endif %}
+
+    {% if item.item_name == 'Neptune' %}
+        <div id="orbit-neptune">
+            <img class="Neptune" height="25px" width="25px" src="{{item.background_image}}">
+        </div>
+    {% endif %}
+
+    <span class="orbit-mercury"></span>
+    <span class="orbit-venus"></span>
+    <span class="orbit-earth"></span>
+    <span class="orbit-mars"></span>
+    <span class="orbit-jupiter"></span>
+    <span class="orbit-saturn"></span>
+    <span class="orbit-uranus"></span>
+    <span class="orbit-neptune"></span>
+
+{% endfor %}
+{% endblock %}
+</div>
+</body>
+</html>
